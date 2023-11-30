@@ -1,0 +1,12 @@
+{% extends 'recipes/base.html' %}
+
+{% block title %}Щоденник кухаря{% endblock %}
+
+{% block content %}
+	{% for el in recipes %}
+		<a href="{% url 'details' el.id %}" class="preview">
+			<img src="{{ el.image.url }}" alt="{{ el.title }}">
+			<h5>{{ el.title }}</h5>
+		</a>
+	{% endfor %}
+{% endblock %}
